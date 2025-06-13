@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nextly | Daniel R.V</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- AOS for scroll animations -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <!-- Font Awesome -->
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+/>
+
+
+  <style>
+    /* Gradient text */
+    .gradient-text {
+      background: linear-gradient(90deg, #10b981, #3b82f6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    /* Preloader */
+    #preloader {
+      background: white;
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .loader {
+      border: 6px solid #e5e7eb;
+      border-top: 6px solid #10b981;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="loader"></div>
+  </div>
+
+  <!-- NAVIGATION -->
+  <nav
+    class="fixed top-0 w-full bg-white/90 backdrop-blur-md shadow-lg z-50"
+    role="navigation"
+  >
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <a class="text-3xl font-extrabold text-gray-800 gradient-text">Daniel R.V</a>
+      <div class="hidden md:flex space-x-10 font-semibold text-gray-700">
+        <a href="#hero" class="nav-link hover:text-green-500">Inicio</a>
+        <a href="#features" class="nav-link hover:text-green-500">Características</a>
+        <a href="#plans" class="nav-link hover:text-green-500">Planes</a>
+        <a href="#testimonials" class="nav-link hover:text-green-500">Testimonios</a>
+        <a href="#contact" class="nav-link hover:text-green-500">Contacto</a>
+      </div>
+      <button
+        id="menu-btn"
+        class="md:hidden text-gray-700 hover:text-green-500 focus:outline-none"
+        aria-label="Abrir menú"
+      >
+        <i class="fas fa-bars text-2xl"></i>
+      </button>
+    </div>
+    <!-- Mobile menu -->
+    <div
+      id="mobile-menu"
+      class="hidden md:hidden bg-white px-6 pb-6 space-y-3 text-gray-700 font-semibold"
+    >
+      <a href="#hero" class="block py-2 border-b border-gray-200 hover:text-green-500">Inicio</a>
+      <a href="#features" class="block py-2 border-b border-gray-200 hover:text-green-500">Características</a>
+      <a href="#plans" class="block py-2 border-b border-gray-200 hover:text-green-500">Planes</a>
+      <a href="#testimonials" class="block py-2 border-b border-gray-200 hover:text-green-500">Testimonios</a>
+      <a href="#contact" class="block py-2 hover:text-green-500">Contacto</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section
+    id="hero"
+    class="min-h-screen flex flex-col justify-center items-center text-center px-6 pt-28 md:pt-36"
+    data-aos="fade-up"
+  >
+    <h1
+      class="text-5xl md:text-6xl font-extrabold mb-6 leading-tight max-w-4xl"
+    >
+      Proyectos y <span class="gradient-text">Soluciones Digitales</span><br />
+      que <span id="typed-text" class="text-green-500"></span>
+    </h1>
+    <p class="max-w-xl text-gray-600 mb-10 text-lg">
+      Soy Daniel, desarrollador web especializado en crear aplicaciones modernas,
+      escalables y con diseño de vanguardia.
+    </p>
+    <a
+      href="#plans"
+      class="inline-block bg-green-500 hover:bg-green-600 text-white font-bold px-10 py-4 rounded-full shadow-lg transition"
+    >
+      Ver planes y proyectos
+    </a>
+  </section>
+
+  <!-- FEATURES -->
+<section
+  id="features"
+  class="max-w-7xl mx-auto px-6 py-20 grid grid-cols-1 md:grid-cols-3 gap-12"
+>
+  <div data-aos="fade-up" data-aos-delay="100" class="text-center">
+    <div
+      class="mx-auto mb-6 p-5 rounded-full bg-green-100 inline-block text-green-500"
+    >
+      <i class="fas fa-rocket fa-3x"></i>
+    </div>
+    <h3 class="text-xl font-semibold mb-2">Rendimiento Ultra Rápido</h3>
+    <p class="text-gray-600">
+      Aplicaciones optimizadas para cargar al instante y funcionar sin retrasos.
+    </p>
+  </div>
+  <div data-aos="fade-up" data-aos-delay="200" class="text-center">
+    <div
+      class="mx-auto mb-6 p-5 rounded-full bg-green-100 inline-block text-green-500"
+    >
+      <i class="fas fa-shield-alt fa-3x"></i>
+    </div>
+    <h3 class="text-xl font-semibold mb-2">Seguridad de Primera</h3>
+    <p class="text-gray-600">
+      Protocolos modernos para proteger tus datos y la privacidad de tus usuarios.
+    </p>
+  </div>
+  <div data-aos="fade-up" data-aos-delay="300" class="text-center">
+    <div
+      class="mx-auto mb-6 p-5 rounded-full bg-green-100 inline-block text-green-500"
+    >
+      <i class="fas fa-mobile-alt fa-3x"></i>
+    </div>
+    <h3 class="text-xl font-semibold mb-2">Responsive y Adaptable</h3>
+    <p class="text-gray-600">
+      Diseño que funciona perfecto en cualquier dispositivo y tamaño de pantalla.
+    </p>
+  </div>
+</section>
+
+  <!-- PLANS -->
+  <section
+    id="plans"
+    class="max-w-7xl mx-auto px-6 py-20"
+    data-aos="fade-up"
+  >
+    <h2 class="text-4xl font-extrabold text-center mb-12 gradient-text">Planes Profesionales</h2>
+    <div
+      class="grid gap-10 max-w-5xl mx-auto md:grid-cols-3"
+    >
+      <!-- Plan Básico -->
+      <div
+        class="border-2 border-green-500 rounded-3xl p-8 flex flex-col justify-between hover:shadow-2xl transition transform hover:-translate-y-2"
+      >
+        <h3 class="text-2xl font-bold mb-4">Básico</h3>
+        <p class="text-gray-600 mb-8">
+          Perfecto para comenzar con proyectos personales o pruebas.
+        </p>
+        <p class="text-4xl font-extrabold mb-6">€0 <span class="text-lg font-normal text-gray-500">/ mes</span></p>
+        <ul class="mb-8 space-y-3 text-gray-600">
+          <li><i class="fas fa-check text-green-500 mr-2"></i>Hasta 2 proyectos</li>
+          <li><i class="fas fa-check text-green-500 mr-2"></i>Soporte básico</li>
+          <li><i class="fas fa-check text-green-500 mr-2"></i>Actualizaciones limitadas</li>
+        </ul>
+        <button
+          class="bg-green-500 text-white font-semibold py-3 rounded-full hover:bg-green-600 transition"
+        >
+          Elegir Básico
+        </button>
+      </div>
+
+      <!-- Plan Pro -->
+      <div
+        class="bg-green-500 text-white rounded-3xl p-8 flex flex-col justify-between shadow-2xl transform scale-105 hover:scale-110 transition"
+      >
+        <h3 class="text-2xl font-bold mb-4">Pro</h3>
+        <p class="mb-8 opacity-80">
+          Para profesionales que necesitan escalabilidad y más potencia.
+        </p>
+        <p class="text-4xl font-extrabold mb-6">€29 <span class="text-lg font-normal opacity-80">/ mes</span></p>
+        <ul class="mb-8 space-y-3">
+          <li><i class="fas fa-check mr-2"></i>Proyectos ilimitados</li>
+          <li><i class="fas fa-check mr-2"></i>Soporte 24/7</li>
+          <li><i class="fas fa-check mr-2"></i>Actualizaciones automáticas</li>
+          <li><i class="fas fa-check mr-2"></i>Integraciones API</li>
+        </ul>
+        <button
+          class="bg-white text-green-600 font-semibold py-3 rounded-full hover:bg-gray-100 transition"
+        >
+          Elegir Pro
+        </button>
+      </div>
+
+      <!-- Plan Empresa -->
+      <div
+        class="border-2 border-green-500 rounded-3xl p-8 flex flex-col justify-between hover:shadow-2xl transition transform hover:-translate-y-2"
+      >
+        <h3 class="text-2xl font-bold mb-4">Empresa</h3>
+        <p class="text-gray-600 mb-8">
+          Soluciones a medida para grandes empresas y equipos.
+        </p>
+        <p class="text-4xl font-extrabold mb-6">€99 <span class="text-lg font-normal text-gray-500">/ mes</span></p>
+        <ul class="mb-8 space-y-3 text-gray-600">
+          <li><i class="fas fa-check text-green-500 mr-2"></i>Usuarios ilimitados</li>
+          <li><i class="fas fa-check text-green-500 mr-2"></i>Soporte dedicado</li>
+          <li><i class="fas fa-check text-green-500 mr-2"></i>Consultoría personalizada</li>
+          <li><i class="fas fa-check text-green-500 mr-2"></i>Onboarding avanzado</li>
+        </ul>
+        <button class="bg-green-500 text-white font-semibold py-3 rounded-full hover:bg-green-600 transition">
+            <a href="#contact">
+                Contactar
+            </a>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section
+    id="testimonials"
+    class="bg-white py-20"
+    data-aos="fade-up"
+  >
+    <h2 class="text-4xl font-extrabold text-center mb-12 gradient-text">Lo que dicen los clientes</h2>
+    <div
+      class="max-w-5xl mx-auto px-6 space-y-10 md:space-y-0 md:grid md:grid-cols-3 md:gap-8"
+    >
+      <div class="shadow-lg rounded-xl p-8 text-center">
+        <img
+          src="https://randomuser.me/api/portraits/women/44.jpg"
+          alt="Cliente 1"
+          class="w-20 h-20 rounded-full mx-auto mb-4 object-cover"
+        />
+        <p class="text-gray-600 italic mb-4">
+          "Hicieron un trabajo espectacular con nuestra app. Profesionales y atentos en todo momento."
+        </p>
+        <h4 class="font-semibold">María López</h4>
+        <p class="text-sm text-gray-500">CEO de TechCorp</p>
+      </div>
+      <div class="shadow-lg rounded-xl p-8 text-center">
+        <img
+          src="https://randomuser.me/api/portraits/men/46.jpg"
+          alt="Cliente 2"
+          class="w-20 h-20 rounded-full mx-auto mb-4 object-cover"
+        />
+        <p class="text-gray-600 italic mb-4">
+          "La aplicación escaló perfectamente y los tiempos de respuesta mejoraron mucho."
+        </p>
+        <h4 class="font-semibold">Carlos García</h4>
+        <p class="text-sm text-gray-500">Product Manager en Webify</p>
+      </div>
+      <div class="shadow-lg rounded-xl p-8 text-center">
+        <img
+          src="https://randomuser.me/api/portraits/women/65.jpg"
+          alt="Cliente 3"
+          class="w-20 h-20 rounded-full mx-auto mb-4 object-cover"
+        />
+        <p class="text-gray-600 italic mb-4">
+          "Muy contentos con la entrega y la calidad del código. Recomendado 100%."
+        </p>
+        <h4 class="font-semibold">Ana Ruiz</h4>
+        <p class="text-sm text-gray-500">CTO en Innovatech</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTNERS -->
+  <section
+    id="partners"
+    class="max-w-7xl mx-auto px-6 py-16 text-center"
+    data-aos="fade-up"
+  >
+    <h2 class="text-3xl font-bold mb-12 gradient-text">Empresas que confían en nosotros</h2>
+    <div class="flex justify-center gap-12 flex-wrap items-center">
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"
+        alt="Netflix"
+        class="h-10 grayscale hover:grayscale-0 transition duration-300"
+      />
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg"
+        alt="Google"
+        class="h-8 grayscale hover:grayscale-0 transition duration-300"
+      />
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
+        alt="Apple"
+        class="h-10 grayscale hover:grayscale-0 transition duration-300"
+      />
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg"
+        alt="Microsoft"
+        class="h-10 grayscale hover:grayscale-0 transition duration-300"
+      />
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section
+    id="contact"
+    class="bg-green-100 py-20 px-6"
+    data-aos="fade-up"
+  >
+    <h2 class="text-4xl font-extrabold text-center mb-10 gradient-text">¿Quieres trabajar con nosotros?</h2>
+    <p class="max-w-2xl mx-auto mb-8 text-center text-gray-700 text-lg">
+      Escríbenos y hablemos de tu proyecto o idea. Estamos disponibles para colaborar y crear cosas increíbles.
+    </p>
+    <form
+      action="https://formsubmit.co/danielrvazquez190805@gmail.com"
+      method="POST"
+      class="max-w-xl mx-auto grid grid-cols-1 gap-6"
+    >
+      <input
+        type="text"
+        name="name"
+        required
+        placeholder="Tu nombre"
+        class="p-4 rounded-lg border border-green-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+      />
+      <input
+        type="email"
+        name="email"
+        required
+        placeholder="Tu email"
+        class="p-4 rounded-lg border border-green-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+      />
+      <textarea
+        name="message"
+        rows="5"
+        required
+        placeholder="Cuéntame tu proyecto..."
+        class="p-4 rounded-lg border border-green-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+      ></textarea>
+      <button
+        type="submit"
+        class="bg-green-500 text-white font-bold py-4 rounded-lg hover:bg-green-600 transition"
+      >
+        Enviar mensaje
+      </button>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-white border-t border-gray-200 py-8 text-center text-gray-600 text-sm">
+    <p>© 2025 Daniel R.V. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    // Preloader hide
+    window.addEventListener('load', () => {
+      document.getElementById('preloader').style.display = 'none';
+    });
+
+    // Typed.js effect
+    const typed = new Typed('#typed-text', {
+      strings: ['impactan', 'funcionan', 'crecen', 'deslumbran'],
+      typeSpeed: 80,
+      backSpeed: 50,
+      loop: true,
+    });
+
+    // AOS init
+    AOS.init({
+      duration: 900,
+      easing: 'ease-in-out',
+      once: true,
+    });
+
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
+
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  // Preloader: ocultar cuando la página cargue
+  window.addEventListener('load', () => {
+    const preloader = document.getElementById('preloader');
+    preloader.style.opacity = '0';
+    preloader.style.pointerEvents = 'none';
+    setTimeout(() => preloader.style.display = 'none', 500);
+
+    // Inicializar AOS (animaciones scroll)
+    AOS.init({
+      duration: 800,
+      once: true
+    });
+  });
+
+  // Menú móvil toggle
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+
+  // Typed effect en el texto del hero
+  const phrases = ['innovar.', 'crecer.', 'transformar.', 'impactar.'];
+  const typedText = document.getElementById('typed-text');
+  let phraseIndex = 0;
+  let letterIndex = 0;
+  let typing = true;
+
+  function type() {
+    if (typing) {
+      if (letterIndex <= phrases[phraseIndex].length) {
+        typedText.textContent = phrases[phraseIndex].slice(0, letterIndex);
+        letterIndex++;
+        setTimeout(type, 150);
+      } else {
+        typing = false;
+        setTimeout(type, 2000);
+      }
+    } else {
+      if (letterIndex >= 0) {
+        typedText.textContent = phrases[phraseIndex].slice(0, letterIndex);
+        letterIndex--;
+        setTimeout(type, 50);
+      } else {
+        typing = true;
+        phraseIndex = (phraseIndex + 1) % phrases.length;
+        setTimeout(type, 500);
+      }
+    }
+  }
+
+  type();
+</script>
+
+
+</body>
+</html>
